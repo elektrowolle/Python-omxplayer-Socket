@@ -63,7 +63,7 @@ class omxPlayerSocket():
         self.playUrl = ""
         try:
             self.omxSocket.bind(address)
-            print("connect to " + address[0] + ":" + address[1])
+            print("connect to " + str(address[0]) + ":" + str(address[1]))
         except socket.error as msg:
             sys.stderr.write("[ERROR] %s.\n" % msg[1])
             sys.exit(1)
@@ -76,7 +76,7 @@ class omxPlayerSocket():
             if select.select([self.omxSocket],[],[],10.0)[0]:
                 # FIXME: maintain message length
                 msg, clientAddr = self.omxSocket.recvfrom(4096)
-                print("received \"" + msg + "\" from:" + clientAddr)
+                print("received \"" + str(msg) + "\" from:" + str(clientAddr))
         
             if msg != "":
             
