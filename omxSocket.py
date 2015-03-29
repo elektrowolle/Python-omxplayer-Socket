@@ -63,7 +63,7 @@ class omxPlayerSocket():
         self.playUrl = ""
         try:
             self.omxSocket.bind(address)
-            print("connect to " + address)
+            print("connect to " + address[0] + ":" + address[1])
         except socket.error as msg:
             sys.stderr.write("[ERROR] %s.\n" % msg[1])
             sys.exit(1)
